@@ -11,6 +11,11 @@
     display: none;
 }
 
+#canvas {
+    &:hover {
+        cursor: pointer;
+    }
+}
 .prize__wrapper {
     width: 400px;
     position: fixed;

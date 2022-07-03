@@ -68,68 +68,80 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    const wheelButton = document.querySelector('.wheel__button');
+    const wheelButton = document.querySelector('button');
 
-    let spinsCount = 0;
-    let spinsAvalible;
+    const canvasWrapper = document.querySelector('#canvas');
 
-    const spanCount = document.querySelector('.spins span');
-
-    fetch('https://x8ki-letl-twmt.n7.xano.io/api:vTFmrVeI/win/1')
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                if (data.spins) {
-                    spanCount.innerHTML = data.spins; 
-                    spinsAvalible = data.spins;
-                    if (data.spins == 0) {
-                        spinButton.classList.add('disabled');
-                    }
-                } else {
-                    spinButton.classList.add('disabled');
-                }
-            })
-            .catch((e) => {
-                console.log(e)
-            });
-
-    let canSpin = true;
-    const spinButton = document.querySelector('.wheel__button button');
+    const prizeWrap = document.querySelector('.prize__wrapper');
+    const prizeSpan = document.querySelector('.prize__wrapper span');
 
     wheelButton.addEventListener('click', (e) => {
         e.preventDefault();
-
-        if (canSpin) {
-            fetch('https://x8ki-letl-twmt.n7.xano.io/api:vTFmrVeI/win/1')
+            fetch(`http://127.0.0.1:8000/get_reward/${email}/?key=${key}`)
             .then((response) => {
+            //    console.log(response);
                 return response.json();
             })
             .then((data) => {
-                if (spinsCount < data.spins) {
-                    canSpin = false;
-                    spinButton.classList.add('disabled');
-                    setTimeout(() => {
-                        canSpin = true;
-                        if (spinsCount < data.spins) {
-                            spinButton.classList.remove('disabled');
-                        }
-                    }, 5100);
-                    theWheel.draw();
-                    let stopAt = theWheel.getRandomForSegment(data.section);
-                    theWheel.animation.stopAngle = stopAt;
-                    theWheel.startAnimation();
-                    spinsCount = spinsCount + 1;
-                    if (spinsAvalible - spinsCount) {
-                        spanCount.innerHTML = spinsAvalible - spinsCount;
+                    console.log(data);
+                    if (data.success) {
+                        wheelButton.classList.add('disabled');
+
+                        setTimeout(() => {
+                            prizeSpan.innerHTML = data.reward_text;
+                            prizeWrap.classList.add('active');
+                            setTimeout(() => {
+                                prizeWrap.classList.remove('active');
+                            }, 3000);
+                            wheelButton.classList.remove('disabled');
+                        }, 5000);
+
+                        theWheel.draw();
+                        let stopAt = theWheel.getRandomForSegment(data.reward_code + 1);
+                        theWheel.animation.stopAngle = stopAt;
+                        theWheel.startAnimation();
+
                     } else {
-                        spanCount.innerHTML = '0';
+                        wheelButton.classList.add('disabled');
                     }
-                } 
             })
             .catch((e) => {
                 console.log(e)
             });
-        }
+    })
+
+    canvasWrapper.addEventListener('click', (e) => {
+        e.preventDefault();
+            fetch(`http://127.0.0.1:8000/get_reward/${email}/?key=${key}`)
+            .then((response) => {
+            //    console.log(response);
+                return response.json();
+            })
+            .then((data) => {
+                    console.log(data);
+                    if (data.success) {
+                        wheelButton.classList.add('disabled');
+
+                        setTimeout(() => {
+                            prizeSpan.innerHTML = data.reward_text;
+                            prizeWrap.classList.add('active');
+                            setTimeout(() => {
+                                prizeWrap.classList.remove('active');
+                            }, 3000);
+                            wheelButton.classList.remove('disabled');
+                        }, 5000);
+
+                        theWheel.draw();
+                        let stopAt = theWheel.getRandomForSegment(data.reward_code + 1);
+                        theWheel.animation.stopAngle = stopAt;
+                        theWheel.startAnimation();
+
+                    } else {
+                        wheelButton.classList.add('disabled');
+                    }
+            })
+            .catch((e) => {
+                console.log(e)
+            });
     })
 });
