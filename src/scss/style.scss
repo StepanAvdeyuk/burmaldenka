@@ -1,0 +1,27 @@
+@import './fonts.scss';
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+    background: url(../img/bg.jpg) center (center/cover) no-repeat; 
+}
+
+@import './page.scss';
+
+@import './responsive.scss';
