@@ -3,7 +3,7 @@
     display: block;
     margin: 0 auto;
     width: 360px;
-    // pointer-events: none;
+    pointer-events: none;
     user-select: none;
 }
 
@@ -16,6 +16,7 @@
         cursor: pointer;
     }
 }
+
 .prize__wrapper {
     width: 400px;
     position: fixed;
@@ -41,7 +42,7 @@
     margin-bottom: 45px;
     width: 284px; 
     user-select: none;
-    // pointer-events: none;
+    pointer-events: none;
 }
 
 h2 {
@@ -66,6 +67,10 @@ h1 {
     line-height: 60px;
 }
 
+h1.mob {
+    display: none;
+}
+
 button {
     position: relative;
     z-index: 2;
@@ -73,7 +78,6 @@ button {
     margin: 0 auto;
     margin-top: 40px;   
     background: linear-gradient(270deg, #EC4141 0%, #F66A68 47.19%, #F66A68 56.56%, #EC4141 100%);
-    // background: transparent;
     border-radius: 20px;
     width: 468px;
     height: 136px;
@@ -101,9 +105,9 @@ button {
     }
     &.disabled {
         background: linear-gradient(90.01deg, #676767 0.01%, #9a9a9a 48.02%, #676767 99.12%);
-        // pointer-events: none;
+        pointer-events: none;
         &::after {
-            display: none;
+            opacity: 0;
         }
     }
 }
@@ -127,6 +131,10 @@ button {
     }
 }
 
+.cloud-mob {
+    display: none;
+}
+
 .info {
     position: relative;
     max-width: 400px;
@@ -147,7 +155,7 @@ button {
     transform: translateX(-110%);
     bottom: 0px;
     user-select: none;
-    // pointer-events: none;
+    pointer-events: none;
 }
 
 .cloud-right {
@@ -156,7 +164,7 @@ button {
     position: absolute;
     bottom: 0px;
     user-select: none;
-    // pointer-events: none;
+    pointer-events: none;
 }
 
 .wheel {
@@ -174,7 +182,7 @@ button {
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
         user-select: none;
-        // pointer-events: none;
+        pointer-events: none;
     }
     &__arrow {
         width: 150px;
@@ -184,7 +192,7 @@ button {
         top: -170px;
         z-index: -1;
         user-select: none;
-        // pointer-events: none;
+        pointer-events: none;
     }
 }
 
@@ -195,7 +203,7 @@ button {
     top: 50%;
     left: 50%;
     user-select: none;
-    // pointer-events: none;
+    pointer-events: none;
 }
 
 #a1 {
@@ -222,7 +230,7 @@ button {
     top: 50%;
     left: 50%;
     user-select: none;
-    // pointer-events: none;
+    pointer-events: none;
 }
 
 #ar-1 {

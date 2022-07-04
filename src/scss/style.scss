@@ -16,6 +16,10 @@ ol, ul {
 	list-style: none;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     overflow-x: hidden;
     position: relative;

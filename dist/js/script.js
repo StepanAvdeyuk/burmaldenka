@@ -1,23 +1,12 @@
 'use strict';
 
 window.addEventListener('DOMContentLoaded', () => { 
-
-    const screenWidth = screen.width;
-
     let wheelSet = {
         wrapWidth: 1320,
         outerRadius: 655,
         textFontSize: 30,
         lineWidth: 6
     };
-
-    // if (screenWidth < 1200) {
-    //     wheelSet.outerRadius = 360;
-    //     wheelSet.textFontSize = 16;
-    //     wheelSet.wrapWidth = 620;
-    // }
-
-    // console.log(document.getElementById('canvas'));
 
     let theWheel = new Winwheel({
         'outerRadius'     : wheelSet.outerRadius,       
@@ -106,6 +95,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
             })
             .catch((e) => {
+                wheelButton.classList.add('disabled');
                 console.log(e)
             });
     })
@@ -141,6 +131,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
             })
             .catch((e) => {
+                wheelButton.classList.add('disabled');
                 console.log(e)
             });
     })

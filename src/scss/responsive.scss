@@ -178,3 +178,201 @@
         transform: translateX(100%) rotate(30deg);
     }
 }
+
+@media (max-width: 768px) {
+    .logo {
+        width: 160px;
+        padding-top: 35px;
+    }
+    h2, h1 {
+        font-size: 36px;
+        line-height: 32px;
+    }
+    #canvas {
+        width: 500px !important;
+        height: 500px !important;
+    }
+    .wheel {
+        &__wrapper {
+            margin-top: 70px;
+        }
+        &__arrow {
+            width: 45px;
+            top: -50px;
+        }
+        &__center {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    #a1 {
+        transform: scale(.45) rotate(45deg) translateX(-289%) translateY(-94%);
+    }
+    #a2 {
+        transform: scale(.45) rotate(-45deg) translateX(135%) translateY(-153%);
+    }
+    #a3 {
+        transform: scale(.45) rotate(-45deg) translateX(133%) translateY(-58%);
+    }
+    #a4 {
+        transform: scale(.45) rotate(45deg) translateX(-291%) translateY(3%);
+    }
+    button {
+        width: 260px;
+        height: 65px;
+        font-size: 17px;
+        margin-top: 30px;
+    }
+    .link {
+        font-size: 14px;
+    }
+    .info {
+        font-weight: 300;
+        padding-bottom: 45px;
+    }
+    #a-mob-l {
+        transform: scale(0.7) translateX(-228%) rotate(-30deg);
+        top: -500px;
+    }
+    #a-mob-r {
+        transform: scale(0.7) translateX(87%) rotate(30deg);
+        top: -500px;
+    }
+    #ar-1 {
+        transform: scale(.5) translateX(-161%) translateY(-20%);
+    }
+    #ar-2 {
+        transform: scale(.5) translateX(-45%) translateY(-4%);
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        padding-top: 50px;
+    }
+    h2 {
+        font-size: 30px;
+        margin-top: 45px;
+    }
+    h1 {
+        font-size: 42px;
+        line-height: 40px;
+        display: none;
+        margin-top: 10px;
+        &.mob {
+            display: block;
+        }
+    }
+    #canvas {
+        width: 400px !important;
+        height: 400px !important;
+    }
+    .wheel {
+        &__wrapper {
+            margin-top: 90px;
+        }
+        &__center {
+            width: 40px;
+            height: 40px;
+        }
+
+    }
+    button {
+        width: 252px;
+        height: 68px;
+        border-radius: 10px;
+    }
+    .info {
+        padding-bottom: 70px;
+    }
+    #a1 {
+        transform: scale(.3) rotate(45deg) translateX(-429%) translateY(-134%);
+    }
+    #a2 {
+        transform: scale(.3) rotate(-45deg) translateX(198%) translateY(-221%);
+    }
+    #a3 {
+        transform: scale(.3) rotate(-45deg) translateX(200%) translateY(-98%);
+    }
+    #a4 {
+        transform: scale(.3) rotate(45deg) translateX(-436%) translateY(-10%);
+    }
+    .logo_s {
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+    .cloud-left {
+        transform: translateX(-64%) scale(0.25);
+    }
+    .cloud-right {
+        transform: translateX(64%) scale(0.25);
+    }
+    #a-mob-l {
+        transform: scale(.6) translateX(-217%) rotate(-30deg);
+        top: -478px;
+    }
+    #a-mob-r {
+        transform: scale(.6) translateX(51%) rotate(30deg);
+        top: -478px;
+    }
+    .cloud-left, .cloud-right {
+        display: none;
+    }
+    .cloud-mob {
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+        user-select: none;
+    }
+    #ar-1 {
+        transform: scale(.3) translateX(-248%) translateY(-41%);
+    }
+    #ar-2 {
+        transform: scale(.4) translateX(-69%) translateY(-15%);
+    }
+    .info {
+        padding-bottom: 100px;
+    }
+    .prize__wrapper {
+        width: 95%;
+        bottom: 15px;
+        right: 50%;
+        transform: translateX(50%);
+        font-size: 16px;
+        text-align: center;
+        padding: 15px;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 400px) {
+    #canvas {
+        width: 360px !important;
+        height: 360px !important;
+    }
+    #a1 {
+        transform: scale(.3) rotate(45deg) translateX(-429%) translateY(-125%);
+    }
+    #a2 {
+        transform: scale(.3) rotate(-45deg) translateX(198%) translateY(-212%);
+    }
+    #a3 {
+        transform: scale(.3) rotate(-45deg) translateX(200%) translateY(-105%);
+    }
+    #a4 {
+        transform: scale(.3) rotate(45deg) translateX(-436%) translateY(-17%);
+    }
+    #ar-1 {
+        transform: scale(.3) translateX(-235%) translateY(-41%);
+    }
+}
+
+@media (max-width: 360px) {
+    #canvas {
+        width: 320px !important;
+        height: 32x0px !important;
+    }
+}
